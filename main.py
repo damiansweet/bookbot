@@ -4,6 +4,14 @@ def main():
     word_count = count_words(book_contents)
     char_count = count_chars(book_contents)
     sorted_char_count = sort_dict(char_count)
+    
+    print("--- Begin report of books/frankenstein.txt ---")
+    print(f"{word_count} words found in the document")
+    print("\n")
+    for char in sorted_char_count:
+        if char["char"].isalpha():
+            print(f"The '{char['char']}' character was found {char['num']} times")
+    print("--- End report ---")
 
 def read_book(book):
     with open("books/frankenstein.txt") as f:
